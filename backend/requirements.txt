@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+pwdlib[argon2]
+python-jose[cryptography]
+python-multipart
