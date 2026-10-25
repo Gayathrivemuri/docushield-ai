@@ -20,7 +20,7 @@ function App() {
     try {
       if (isRegister) {
         const response = await fetch(
-          'http://127.0.0.1:8000/register',
+          'https://docushield-ai-backend-2var.onrender.com/register',
           {
             method: 'POST',
             headers: {
@@ -55,7 +55,7 @@ function App() {
         formData.append('password', password)
 
         const response = await fetch(
-          'http://127.0.0.1:8000/token',
+          'https://docushield-ai-backend-2var.onrender.com/token',
           {
             method: 'POST',
             headers: {
@@ -91,7 +91,7 @@ function App() {
       const token = localStorage.getItem('token')
 
       const response = await fetch(
-        'http://127.0.0.1:8000/documents',
+        'https://docushield-ai-backend-2var.onrender.com/documents',
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -127,7 +127,7 @@ function App() {
       formData.append('file', selectedFile)
 
       const response = await fetch(
-        'http://127.0.0.1:8000/documents/upload',
+        'https://docushield-ai-backend-2var.onrender.com/documents/upload',
         {
           method: 'POST',
           headers: {
@@ -160,7 +160,7 @@ function App() {
       const token = localStorage.getItem('token')
 
       const response = await fetch(
-        `http://127.0.0.1:8000/documents/${doc.id}/download`,
+        `https://docushield-ai-backend-2var.onrender.com/documents/${doc.id}/download`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
