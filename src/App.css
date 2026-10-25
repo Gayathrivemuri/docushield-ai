@@ -1,0 +1,365 @@
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(
+    135deg,
+    #0b1735 0%,
+    #142b55 45%,
+    #1e3a70 100%
+  );
+  color: #172554;
+}
+
+/* Soft background glow */
+.app {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.app::before {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  top: 120px;
+  left: -150px;
+  background: rgba(59, 130, 246, 0.18);
+  filter: blur(100px);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.app::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  bottom: -150px;
+  right: -100px;
+  background: rgba(96, 165, 250, 0.15);
+  filter: blur(100px);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Navbar */
+.navbar {
+  position: relative;
+  z-index: 1;
+  height: 80px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Login section */
+.hero {
+  position: relative;
+  z-index: 1;
+}
+
+
+button,
+input {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.navbar {
+  height: 80px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-bottom: 1px solid #e5eaf3;
+}
+
+.navbar h2 {
+  margin: 0;
+  color: #173b78;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.navbar span {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.hero {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+.hero-icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e5edff;
+  border-radius: 18px;
+  font-size: 30px;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  margin: 0 0 12px;
+  font-size: 36px;
+  font-weight: 750;
+  text-align: center;
+  color: #173b78;
+}
+
+.hero > p {
+  margin: 0 0 30px;
+  color: #64748b;
+  font-size: 15px;
+  text-align: center;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px;
+  background: #ffffff;
+  border: 1px solid #e5eaf3;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(23, 59, 120, 0.08);
+}
+
+.login-form input {
+  width: 100%;
+  height: 52px;
+  padding: 0 16px;
+  border: 1px solid #dbe3ef;
+  border-radius: 10px;
+  background: #f9fbff;
+  color: #172554;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.login-form input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.login-form input::placeholder {
+  color: #94a3b8;
+}
+
+.primary,
+.secondary {
+  min-height: 48px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.primary {
+  width: 100%;
+  border: none;
+  background: #1d4ed8;
+  color: #ffffff;
+}
+
+.primary:hover {
+  background: #1e40af;
+  transform: translateY(-1px);
+}
+
+.secondary {
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #1d4ed8;
+}
+
+.secondary:hover {
+  background: #eff6ff;
+}
+
+.hero > p:last-of-type {
+  margin: 24px 0 12px;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  .navbar h2 {
+    font-size: 19px;
+  }
+
+  .navbar span {
+    font-size: 12px;
+  }
+
+  .hero {
+    padding: 35px 16px;
+  }
+
+  .hero h1 {
+    font-size: 29px;
+  }
+
+  .login-form {
+    padding: 24px 20px;
+  }
+}
+
+
+
+
+/* Improve text visibility on dark background */
+.hero h1 {
+  color: #ffffff;
+}
+
+.hero > p {
+  color: #cbd5e1;
+}
+
+.hero > p:last-of-type {
+  color: #cbd5e1;
+}
+
+/* Remove unwanted page margin */
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+/* Make background cover the full screen */
+.app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Better account button */
+.secondary {
+  min-width: 220px;
+  font-weight: 600;
+}
+
+
+
+.form-heading {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.form-heading h2 {
+  color: #ffffff;
+  font-size: 27px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.form-heading p {
+  color: #cbd5e1;
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+
+
+.dashboard {
+  min-height: calc(100vh - 80px);
+  padding: 60px 7%;
+  color: #ffffff;
+}
+
+.dashboard h1 {
+  font-size: 36px;
+  margin: 0 0 12px;
+  color: #ffffff;
+}
+
+.dashboard > p {
+  color: #cbd5e1;
+  margin-bottom: 40px;
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.dashboard-card {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  color: #173b78;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-card h3 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+
+.dashboard-card p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.dashboard > .primary {
+  max-width: 180px;
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 35px 20px;
+  }
+
+  .dashboard h1 {
+    font-size: 28px;
+  }
+
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+}
+

@@ -1,0 +1,12 @@
+venv/
+backend/venv/
+node_modules/
+.env
+backend/.env
+_pycache__/
+*.pyc
+backend/*.db
+backend/*.sqlite
+dist/
+docushield.db
+backend/uploads/
